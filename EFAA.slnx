@@ -1,1 +1,6 @@
-<Solution />
+<Solution>
+  <Project Path="EFAA.BusinessLogic/EFAA.BusinessLogic.csproj" />
+  <Project Path="EFAA.DataAccess/EFAA.DataAccess.csproj" />
+  <Project Path="EFAA.Entities/EFAA.Entities.csproj" />
+  <Project Path="EFAA.WebApplication/EFAA.WebApplication.csproj" />
+</Solution>
