@@ -16,4 +16,10 @@ public partial class Garment
     public int? Quantity { get; set; }
 
     public virtual Designer Designer { get; set; } = null!;
+
+    public long GarmentId { get; set; }
+
+    public string? GarmentCode { get; set; }
+
+    public virtual Garment? ParentGarment { get; set; }
 }

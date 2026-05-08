@@ -1,5 +1,6 @@
 ﻿using Ardalis.Specification.EntityFrameworkCore;
 using EFAA.DataAccess.Interfaces;
+using EFAA.Entities;
 using Microsoft.EntityFrameworkCore.Storage;
 using System;
 using System.Collections.Generic;
@@ -37,6 +38,31 @@ namespace EFAA.DataAccess.Repositories
             await _transaction.CommitAsync();
             await _transaction.DisposeAsync();
             _transaction = null;
+        }
+
+        public Task<T?> FirstOrDefaultAsync(BusinessLogic.UseCases.Garments.Commands.CreateGarment.GetLastGarmentCodeSpec getLastGarmentCodeSpec)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<T?> FirstOrDefaultAsync(BusinessLogic.UseCases.Garments.Specifications.GetGarmentWithDesignerSpec getGarmentWithDesignerSpec, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<T?> GetByIdAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Garment> GetByIdAsync(object garmentId, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<T>> ListAsync(BusinessLogic.UseCases.Garments.Specifications.GetGarmentWithDesignerSpec getGarmentWithDesignerSpec, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
         }
 
         public async Task RollbackAsync()

@@ -18,8 +18,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="UseCases\Designers\Commands\" />
-    <Folder Include="UseCases\Designers\Queries\" />
+    <Folder Include="UseCases\Users\Commands\" />
+    <Folder Include="UseCases\Users\Queries\" />
   </ItemGroup>
 
 </Project>
