@@ -1,10 +1,78 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using EFAA.Entities;
 
-namespace EFAA.BusinessLogic.DTOs
+namespace EFAA.BusinessLogic.DTOs;
+
+
+public class UserResponse
 {
-    internal class UserDto
-    {
-    }
+    public int UserId { get; set; }
+
+    public int RolId { get; set; }
+
+    public string? UserName { get; set; }
+
+    public string? UserNickname { get; set; }
+
+    public bool? UserStatus { get; set; }
+
+    public string? RolName { get; set; }
+}
+
+
+public class CreateUserRequest
+{
+    public int RolId { get; set; }
+
+    public string? UserName { get; set; }
+
+    public string? UserNickname { get; set; }
+
+    public string? UserPassword { get; set; }
+
+    public bool? UserStatus { get; set; }
+
+    public DateOnly? RegistrationDate { get; set; }
+}
+
+
+public class UpdateUserRequest
+{
+    public int UserId { get; set; }
+
+    public int RolId { get; set; }
+
+    public string? UserName { get; set; }
+
+    public string? UserNickname { get; set; }
+
+    public string? UserPassword { get; set; }
+
+    public bool? UserStatus { get; set; }
+
+    public DateOnly? RegistrationDate { get; set; }
+}
+
+public class RoleResponse
+{
+    public int RolId { get; set; }
+
+    public string? RolName { get; set; }
+}
+
+
+public class UserByIdResponse
+{
+    public int UserId { get; set; }
+
+    public int RolId { get; set; }
+
+    public string? UserName { get; set; }
+
+    public string? UserNickname { get; set; }
+
+    public string? UserPassword { get; set; }
+
+    public bool? UserStatus { get; set; }
+
+    public DateOnly? RegistrationDate { get; set; }
 }

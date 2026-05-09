@@ -11,5 +11,15 @@
         {
             throw new NotImplementedException();
         }
+
+        internal static async Task ListAsync(CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal static async Task ListAsync(object cancelletionToken)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

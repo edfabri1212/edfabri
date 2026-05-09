@@ -2,9 +2,6 @@
 using EFAA.DataAccess.Interfaces;
 using EFAA.Entities;
 using Microsoft.EntityFrameworkCore.Storage;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace EFAA.DataAccess.Repositories
 {
@@ -60,7 +57,17 @@ namespace EFAA.DataAccess.Repositories
             throw new NotImplementedException();
         }
 
+        public Task<User?> GetUserByIdAsync(int userId, CancellationToken cancellationToken = default)
+        {
+            throw new NotImplementedException();
+        }
+
         public Task<List<T>> ListAsync(BusinessLogic.UseCases.Garments.Specifications.GetGarmentWithDesignerSpec getGarmentWithDesignerSpec, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task ListAsync(object cancellation)
         {
             throw new NotImplementedException();
         }
@@ -75,6 +82,11 @@ namespace EFAA.DataAccess.Repositories
             await _transaction.RollbackAsync();
             await _transaction.DisposeAsync();
             _transaction = null;
+        }
+
+        Task<User> IEfRepository<T>.GetByIdAsyn(object userId, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
         }
     }
 }

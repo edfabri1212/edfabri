@@ -14,6 +14,9 @@ namespace EFAA.BusinessLogic.Mappings
         {
             config.NewConfig<Garment, GarmentResponse>()
                 .Map(pd => pd.GarmentName, p => p.Garment.GarmentName);
+
+            config.NewConfig<User, UserResponse>()
+                .Map(ud => ud.RolName, u => u.Rol.RolName);
         }
     }
 }

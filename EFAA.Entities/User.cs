@@ -14,4 +14,8 @@ public partial class User
     public string? SecretHash { get; set; }
 
     public virtual Role Role { get; set; } = null!;
+    public string UserNickname { get; set; }
+    public string UserPassword { get; set; }
+    public bool UserStatus { get; set; }
+    public object Rol { get; set; }
 }

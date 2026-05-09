@@ -16,17 +16,17 @@ namespace EFAA.DataAccess.Interfaces
         Task<T?> FirstOrDefaultAsync(
             BusinessLogic.UseCases.Garments.Specifications.GetGarmentWithDesignerSpec getGarmentWithDesignerSpec,
             CancellationToken cancellationToken);
-
+        Task<User> GetByIdAsyn(object userId, CancellationToken cancellationToken);
         Task<T?> GetByIdAsync();
 
         Task<Garment> GetByIdAsync(
             object garmentId,
             CancellationToken cancellationToken);
-
+        Task<User?> GetUserByIdAsync(int userId, CancellationToken cancellationToken = default);
         Task<List<T>> ListAsync(
             BusinessLogic.UseCases.Garments.Specifications.GetGarmentWithDesignerSpec getGarmentWithDesignerSpec,
             CancellationToken cancellationToken);
-
+        Task ListAsync(object cancellation);
         Task RollbackAsync();
     }
 }

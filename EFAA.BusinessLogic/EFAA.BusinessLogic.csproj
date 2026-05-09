@@ -17,9 +17,4 @@
     <ProjectReference Include="..\EFAA.Entities\EFAA.Entities.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="UseCases\Users\Commands\" />
-    <Folder Include="UseCases\Users\Queries\" />
-  </ItemGroup>
-
 </Project>

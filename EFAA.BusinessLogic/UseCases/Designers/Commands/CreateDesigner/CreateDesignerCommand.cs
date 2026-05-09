@@ -7,5 +7,5 @@ using System.Text;
 namespace EFAA.BusinessLogic.UseCases.Designers.Commands.CreateDesigner
 {
 
-    public record CreateDesignerCommand(CreateDesignerRequest Request) : IRequest<int>; 
+    public record CreateDesignerCommand(CreateDesignerRequest Request) : IRequest<int>;
 
