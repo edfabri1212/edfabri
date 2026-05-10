@@ -16,6 +16,7 @@ public partial class QuotationContext : DbContext
     {
     }
 
+    // DbSet actualizados a Designers y Garments
     public virtual DbSet<Designer> Designers { get; set; }
 
     public virtual DbSet<Garment> Garments { get; set; }
@@ -24,14 +25,11 @@ public partial class QuotationContext : DbContext
 
     public virtual DbSet<User> Users { get; set; }
 
-//    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-//        => optionsBuilder.UseSqlServer("Server=DESKTOP-2RKPK4G; Database=EFAA; User Id=sa; Password=Edfabri12; Integrated Security=True;Encrypt=False;");
-
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Designer>(entity =>
         {
+            // Ajuste de PK para Designers
             entity.HasKey(e => e.Id).HasName("PK__Designer__3214EC07F74D8D72");
 
             entity.Property(e => e.FullName)
@@ -41,13 +39,17 @@ public partial class QuotationContext : DbContext
 
         modelBuilder.Entity<Garment>(entity =>
         {
+            // Ajuste de PK para Garments
             entity.HasKey(e => e.Id).HasName("PK__Garments__3214EC0727792809");
 
             entity.Property(e => e.MarketPrice).HasColumnType("decimal(18, 2)");
+
+            // Se mantiene ProductName o se cambia a GarmentName según tus entidades
             entity.Property(e => e.ProductName)
                 .HasMaxLength(200)
                 .IsUnicode(false);
 
+            // Relación actualizada: Una prenda tiene un Diseñador, un Diseñador tiene muchas Prendas
             entity.HasOne(d => d.Designer).WithMany(p => p.Garments)
                 .HasForeignKey(d => d.DesignerId)
                 .OnDelete(DeleteBehavior.ClientSetNull)

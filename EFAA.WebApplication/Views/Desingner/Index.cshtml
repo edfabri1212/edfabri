@@ -1,0 +1,35 @@
+﻿@model IEnumerable<EFAA.BusinessLogic.DTOs.DesignerResponse>
+
+@{
+    ViewData["Title"] = "Diseñadores";
+}
+
+<h1>Diseñadores</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-info">Ir a crear diseñador</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nombre
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DesignerName)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.DesignerId }, new { @class = "btn btn-success" })
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.DesignerId }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

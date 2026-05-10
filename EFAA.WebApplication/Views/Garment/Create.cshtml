@@ -1,0 +1,79 @@
+﻿@model EFAA.BusinessLogic.DTOs.CreateGarmentRequest
+
+@{
+    ViewData["Title"] = "Crear";
+}
+
+<h1>Crear</h1>
+
+<h4>Crear Prenda</h4>
+<hr />
+
+<form asp-action="Create">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="row">
+        <div class="form-group col-4">
+            <label asp-for="DesignerId" class="control-label">Diseñador</label>
+            <select asp-for="DesignerId" class="form-control" asp-items="ViewBag.DesignerId"></select>
+            <span asp-validation-for="DesignerId" class="text-danger"></span>
+        </div>
+        <div class="form-group col-4">
+            <label asp-for="SupplierName" class="control-label">Proveedor</label>
+            <input asp-for="SupplierName" class="form-control" />
+            <span asp-validation-for="SupplierName" class="text-danger"></span>
+        </div>
+        <div class="form-group col-2">
+            <label asp-for="GarmentCode" class="control-label">Código</label>
+            <input asp-for="GarmentCode" class="form-control" />
+            <span asp-validation-for="GarmentCode" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="GarmentName" class="control-label">Nombre</label>
+            <input asp-for="GarmentName" class="form-control" />
+            <span asp-validation-for="GarmentName" class="text-danger"></span>
+        </div>
+        <div class="form-group col-6">
+            <label asp-for="GarmentDescription" class="control-label">Descripción</label>
+            <input asp-for="GarmentDescription" class="form-control" />
+            <span asp-validation-for="GarmentDescription" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="GarmentImage" class="control-label">Imagen</label>
+            <input asp-for="GarmentImage" class="form-control" />
+            <span asp-validation-for="GarmentImage" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="PriceUnitPurchase" class="control-label">Precio Compra</label>
+            <input asp-for="PriceUnitPurchase" class="form-control" />
+            <span asp-validation-for="PriceUnitPurchase" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="PriceUnitSale" class="control-label">Precio Unitario</label>
+            <input asp-for="PriceUnitSale" class="form-control" />
+            <span asp-validation-for="PriceUnitSale" class="text-danger"></span>
+        </div>
+        <div class="form-group col-3">
+            <label asp-for="Stock" class="control-label">Existencias</label>
+            <input asp-for="Stock" class="form-control" />
+            <span asp-validation-for="Stock" class="text-danger"></span>
+        </div>
+        <div class="form-group form-check col-3">
+            <label class="form-check-label">
+                <input class="form-check-input" asp-for="GarmentStatus" /> @Html.DisplayNameFor(model => model.GarmentStatus)
+            </label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group mt-3">
+            <input type="submit" value="Crear" class="btn btn-primary" />
+            <a asp-action="Index" class="btn btn-info">Cancelar</a>
+        </div>
+    </div>
+
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

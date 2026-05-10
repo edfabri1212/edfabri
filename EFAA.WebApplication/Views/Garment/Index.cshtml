@@ -1,0 +1,64 @@
+﻿@model IEnumerable<EFAA.BusinessLogic.DTOs.GarmentResponse>
+
+@{
+    ViewData["Title"] = "Prendas";
+}
+
+<h1>Prendas</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-info">Ir a crear prenda</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Proveedor
+            </th>
+            <th>
+                Código
+            </th>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Imagen
+            </th>
+            <th>
+                Precio Unitario
+            </th>
+            <th>
+                Existencias
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SupplierName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GarmentCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GarmentName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GarmentImage)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PriceUnitSale)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Stock)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.GarmentId }, new { @class = "btn btn-success" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

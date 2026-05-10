@@ -11,4 +11,6 @@ public partial class Designer
 
     public virtual ICollection<Garment> Garments { get; set; } = new List<Garment>();
     public int DesingnerId { get; set; }
+    public object FullName { get; set; }
+    public object? Id { get; set; }
 }

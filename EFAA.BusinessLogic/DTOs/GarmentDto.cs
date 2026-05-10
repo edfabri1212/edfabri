@@ -51,7 +51,9 @@ public class CreateGarmentRequest
 
     public class GarmentResponse
     {
-        public long GarmentId { get; set; }
+    public object DesignerId;
+
+    public long GarmentId { get; set; }
 
         public string? SupplierName { get; set; }
 
@@ -66,7 +68,8 @@ public class CreateGarmentRequest
         public int? Stock { get; set; }
 
         public string DesignerName { get; set; } = null!;
-    }
+    public object DesignertId { get; set; }
+}
 
     public class GarmentByIdResponse
     {
