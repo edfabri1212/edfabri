@@ -1,4 +1,5 @@
 ﻿using Ardalis.Specification.EntityFrameworkCore;
+using BusinessLogic;
 using EFAA.DataAccess.Interfaces;
 using EFAA.Entities;
 using Microsoft.EntityFrameworkCore.Storage;
@@ -31,18 +32,25 @@ namespace EFAA.DataAccess.Repositories
             {
                 return;
             }
+
             await _context.SaveChangesAsync();
             await _transaction.CommitAsync();
             await _transaction.DisposeAsync();
+
             _transaction = null;
         }
 
-        public Task<T?> FirstOrDefaultAsync(BusinessLogic.UseCases.Garments.Commands.CreateGarment.GetLastGarmentCodeSpec getLastGarmentCodeSpec)
+        public Task<T?> FirstOrDefaultAsync(UseCases.Garments.Commands.CreateGarment.GetLastGarmentCodeSpec getLastGarmentCodeSpec)
         {
             throw new NotImplementedException();
         }
 
-        public Task<T?> FirstOrDefaultAsync(BusinessLogic.UseCases.Garments.Specifications.GetGarmentWithDesignerSpec getGarmentWithDesignerSpec, CancellationToken cancellationToken)
+        public Task<T?> FirstOrDefaultAsync(UseCases.Garments.Specifications.GetGarmentWithDesignerSpec getGarmentWithDesignerSpec, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<User> GetByIdAsyn(object userId, CancellationToken cancellationToken)
         {
             throw new NotImplementedException();
         }
@@ -62,7 +70,7 @@ namespace EFAA.DataAccess.Repositories
             throw new NotImplementedException();
         }
 
-        public Task<List<T>> ListAsync(BusinessLogic.UseCases.Garments.Specifications.GetGarmentWithDesignerSpec getGarmentWithDesignerSpec, CancellationToken cancellationToken)
+        public Task<List<T>> ListAsync(UseCases.Garments.Specifications.GetGarmentWithDesignerSpec getGarmentWithDesignerSpec, CancellationToken cancellationToken)
         {
             throw new NotImplementedException();
         }
@@ -81,12 +89,8 @@ namespace EFAA.DataAccess.Repositories
 
             await _transaction.RollbackAsync();
             await _transaction.DisposeAsync();
-            _transaction = null;
-        }
 
-        Task<User> IEfRepository<T>.GetByIdAsyn(object userId, CancellationToken cancellationToken)
-        {
-            throw new NotImplementedException();
+            _transaction = null;
         }
     }
 }

@@ -3,7 +3,7 @@ using EFAA.Entities;
 
 namespace EFAA.BusinessLogic.UseCases.Garments.Commands.CreateGarment
 {
-    internal class GetLastGarmentCodeSpec : ISpecification<Garment>
+    internal class GetLastGarmentCodeSpec : Specification<Garment>
     {
         public GetLastGarmentCodeSpec(string prefix)
         {
@@ -11,5 +11,7 @@ namespace EFAA.BusinessLogic.UseCases.Garments.Commands.CreateGarment
         }
 
         public string Prefix { get; }
+
+       
     }
 }

@@ -1,40 +1,30 @@
-﻿﻿@model IEnumerable<EFAA.BusinessLogic.DTOs.UserResponse>
+﻿﻿@model EFAA.BusinessLogic.UseCases.Users.Queries.GetUserAuthenticated.GetUserAuthenticatedQuery
 
 @{
-    ViewData["Title"] = "Usuario";
+    ViewData["Title"] = "Login";
 }
 
-<h1>Usuario</h1>
+<h1>Login</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Login">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>           
+            <div class="form-group">
+                <label class="control-label">Login</label>
+                <input asp-for="userName" class="form-control" />
+            </div>          
+            <div class="form-group">
+                <label asp-for="password" class="control-label">Password</label>
+                <input asp-for="password" type="password" class="form-control" />
+            </div>          
+            <div class="form-group mt-3">
+                <input type="submit" value="Login" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
 
-<p>
-    <a asp-action="Create" class="btn btn-info">Ir a crear usuario</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                Nombre
-            </th>
-            <th>
-                Usuario
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.UserName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.UserNickname)
-                </td>
-                <td>
-                    @Html.ActionLink("Editar", "Edit", new { id = item.UserId }, new { @class = "btn btn-success" })
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -20,7 +20,7 @@ namespace EFAA.DataAccess
                 options.UseSqlServer(configuration.GetConnectionString("DbConnection") ??
                     throw new InvalidOperationException("connection string 'DbContext not found '"))
             );
-            services.AddTransient(typeof(IEfRepository<>), typeof(EfRepository<>));
+            services.AddTransient(typeof(Interfaces.IEfRepository<>), typeof(Repositories.EfRepository<>));
 
             return services;
         }

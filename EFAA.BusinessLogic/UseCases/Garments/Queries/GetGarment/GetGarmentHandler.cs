@@ -3,9 +3,6 @@ using EFAA.DataAccess.Interfaces;
 using EFAA.Entities;
 using Mapster;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace EFAA.BusinessLogic.UseCases.Garments.Queries.GetGarment
 {

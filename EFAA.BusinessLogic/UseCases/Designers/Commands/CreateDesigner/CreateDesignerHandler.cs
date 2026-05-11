@@ -5,11 +5,9 @@ using MediatR;
 
 namespace EFAA.BusinessLogic.UseCases.Designers.Commands.CreateDesigner;
 
-internal sealed class CreateDesignerHandler(IEfRepository<Designer> repository)
+internal sealed class CreateDesignerHandler(IEfRepository<Designer> _repository)
     : IRequestHandler<CreateDesignerCommand, int>
 {
-    private object _repository;
-
     public async Task<int> Handle(CreateDesignerCommand command, CancellationToken cancellationToken)
     {
         try
@@ -23,8 +21,6 @@ internal sealed class CreateDesignerHandler(IEfRepository<Designer> repository)
         catch (Exception)
         {
             return 0;
-            throw;
         }
     }
 }
-
